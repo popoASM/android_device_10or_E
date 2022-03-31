@@ -62,14 +62,8 @@ function blob_fixup() {
 	vendor/lib/libmmcamera2_sensor_modules.so )
         sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "${2}"
         ;;
-	vendor/lib/libmmcamera_dbg.so )
-        sed -i "s|persist.camera.debug.logfile|persist.vendor.camera.dbglog|g" "${2}"
-        ;;
 	vendor/etc/init/android.hardware.gnss@2.1-service-qti.rc )
         sed -i -e "$a\\    capabilities NET_BIND_SERVICE" "${2}"
-        ;;
-	vendor/lib/libmmcamera2_stats_modules.so | vendor/lib/libmmcamera_ppeiscore.so )
-        "${PATCHELF}" --replace-needed "libgui.so" "android.frameworks.displayservice@1.0.so" "${2}"
         ;;
 	vendor/lib/sensors.ssc.so | vendor/lib64/sensors.ssc.so )
         "${PATCHELF}" --remove-needed "liblocationservice.so" "${2}"

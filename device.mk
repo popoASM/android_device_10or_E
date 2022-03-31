@@ -158,6 +158,7 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8937 \
+    libmm-qcamera \
     Snap
 
 PRODUCT_PACKAGES += \

@@ -83,11 +83,11 @@ vendor.qcom.bluetooth.soc=smd
 
 # Camera
 camera.disable_zsl_mode=1
-vendor.camera.hal1.packagelist=com.facebook.katana,com.instagram.android,com.snapchat.android
 vendor.vidc.enc.narrow.searchrange=1
 vendor.camera.lowpower.record.enable=1
 persist.vendor.camera.display.lmax=1280x720
 persist.vendor.camera.display.umax=1920x1080
+persist.camera.dual.camera=0
 persist.camera.HAL3.enabled=1
 
 # CNE
