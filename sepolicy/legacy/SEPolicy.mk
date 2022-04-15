@@ -1,5 +1,5 @@
 # Board specific SELinux policy variable definitions
-SEPOLICY_PATH:= device/xiaomi/santoni/sepolicy/legacy
+SEPOLICY_PATH:= device/10or/E/sepolicy/legacy
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS := \
     $(SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS) \
     $(SEPOLICY_PATH)/generic/public \
@@ -42,4 +42,4 @@ ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 BOARD_VENDOR_SEPOLICY_DIRS += $(SEPOLICY_PATH)/legacy/vendor/test
 endif
 
--include device/lineage/sepolicy/qcom/sepolicy.mk
+-include device/aosp/sepolicy/qcom/sepolicy.mk
