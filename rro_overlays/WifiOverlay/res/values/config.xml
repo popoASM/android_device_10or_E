@@ -41,6 +41,6 @@
     <bool translatable="false" name="config_wifiSaeUpgradeEnabled">false</bool>
 
     <!-- Default access point SSID used for tethering -->
-    <string name="wifi_tether_configure_ssid_default" translatable="false">Redmi 4X</string>
+    <string name="wifi_tether_configure_ssid_default" translatable="false">Tenor E</string>
 
 </resources>

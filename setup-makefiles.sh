@@ -9,8 +9,8 @@
 set -e
 
 # Required!
-DEVICE=santoni
-VENDOR=xiaomi
+DEVICE=E
+VENDOR=10or
 
 # Enable Dexpreopt
 DEXPREOPTAPPS=true

@@ -12,8 +12,8 @@ fi
 set -e
 
 # Required!
-DEVICE=santoni
-VENDOR=xiaomi
+DEVICE=E
+VENDOR=10or
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -76,11 +76,6 @@ function blob_fixup() {
         ;;
         esac
 }
-
-# Goodix
-patchelf --add-needed fakelogprint.so gx_fpd
-patchelf --add-needed fakelogprint.so fingerprint.goodix.so
-patchelf --add-needed fakelogprint.so gxfingerprint.default.so
 
 # Initialize the helper
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"

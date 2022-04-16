@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/xiaomi/santoni
+DEVICE_PATH := device/10or/E
 
 # Architecture
 TARGET_ARCH := arm64
@@ -45,13 +45,13 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.
 ifeq ($(TARGET_KERNEL_VERSION), 4.9)
     BOARD_KERNEL_CMDLINE := androidboot.usbconfigfs=true
 endif
-#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE :=  2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_COMPILE_WITH_MSM_KERNEL := true
-TARGET_KERNEL_CONFIG := santoni_treble_defconfig
-TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
+TARGET_KERNEL_CONFIG := holland1_defconfig
+TARGET_KERNEL_SOURCE := kernel/10or/E
 TARGET_KERNEL_VERSION := 4.9
 TARGET_KERNEL_CLANG_COMPILE := true
 
@@ -73,6 +73,9 @@ BUILD_BROKEN_PREBUILT_ELF_FILES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 RELAX_USES_LIBRARY_CHECK := true
 
+# Bootanimation
+TARGET_BOOTANIMATION_HALF_RES := true
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8937
 TARGET_NO_BOOTLOADER := true
@@ -92,7 +95,7 @@ TARGET_INCLUDE_PIXEL_CHARGER := true
 
 # Display
 TARGET_DISPLAY_USE_SMOOTH_MOTION := true
-TARGET_SCREEN_DENSITY := 300
+TARGET_SCREEN_DENSITY := 440
 BOARD_USES_ADRENO := true
 TARGET_USES_ION := true
 TARGET_USES_HWC2 := true
@@ -121,10 +124,6 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/firmware_mnt:/firmware \
     /vendor/bt_firmware:/bt_firmware
 
-# FM
-BOARD_HAVE_QCOM_FM := true
-TARGET_QCOM_NO_FM_FIRMWARE := true
-
 # GPS
 USE_DEVICE_SPECIFIC_GPS := true
 TARGET_NO_RPC := true
@@ -147,8 +146,8 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/manifests/manifest-lineage.xml
 endif
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_santoni
-TARGET_RECOVERY_DEVICE_MODULES := libinit_santoni
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_E
+TARGET_RECOVERY_DEVICE_MODULES := libinit_E
 
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
@@ -185,9 +184,6 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.qcom
 # SELinux
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-ifeq ($(PRODUCT_NAME), lineage_santoni)
-BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy-lineage/vendor
-endif
 BUILD_BROKEN_TREBLE_SYSPROP_NEVERALLOW := true
 
 # Treble
@@ -217,4 +213,4 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 
 # Inherit from the proprietary version
--include vendor/xiaomi/santoni/BoardConfigVendor.mk
+-include vendor/10or/E/BoardConfigVendor.mk

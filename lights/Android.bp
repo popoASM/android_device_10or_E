@@ -1,8 +1,8 @@
 cc_binary {
-    name: "android.hardware.lights-service.santoni",
+    name: "android.hardware.lights-service.E",
     relative_install_path: "hw",
-    init_rc: ["lights-santoni.rc"],
-    vintf_fragments: ["lights-santoni.xml"],
+    init_rc: ["lights-E.rc"],
+    vintf_fragments: ["lights-E.xml"],
     vendor: true,
     shared_libs: [
         "libbase",
