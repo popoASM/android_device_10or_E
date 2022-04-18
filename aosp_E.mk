@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2019-2021 The LineageOS Project
+# Copyright (C) 2019-2022 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,11 +22,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk
 # Inherit from E device
 $(call inherit-product, device/10or/E/device.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common AOSP stuff.
+$(call inherit-product, vendor/aosp/common.mk)
 
 # Prebuilt apps
 $(call inherit-product-if-exists, vendor/prebuilt-apps/config.mk)
+$(call inherit-product-if-exists, vendor/lawnchair/lawnchair.mk)
 
 # GApps
 $(call inherit-product-if-exists, vendor/gapps/core/config.mk)
@@ -34,28 +35,27 @@ $(call inherit-product-if-exists, vendor/gapps/core/config.mk)
 PRODUCT_DEVICE := E
 PRODUCT_BRAND := 10or
 PRODUCT_MODEL := Tenor E
-PRODUCT_NAME := lineage_E
+PRODUCT_NAME := aosp_E
 BOARD_VENDOR := 10or
 PRODUCT_MANUFACTURER := 10or
 
-# Overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
-
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
-
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm
-
 # Boot animation
 TARGET_BOOT_ANIMATION_RES := 1080
-	
+
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service
+
+# Target
+ARCANA_MAINTAINER := popoA3M
+TARGET_SUPPORTS_QUICK_TAP := true
+USE_PIXEL_CHARGER_IMAGES := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_BLUR := false
 PRODUCT_GMS_CLIENTID_BASE := android-huaqin
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="raven-user 12 SQ1D.220105.007 8030436 release-keys"
+    PRIVATE_BUILD_DESC="raven-user 12 S3B1.220218.004 8242181 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := "google/raven/raven:12/SQ1D.220105.007/8030436:user/release-keys"
+BUILD_FINGERPRINT := "google/raven/raven:12/S3B1.220218.004/8242181:user/release-keys"
