@@ -1,7 +1,7 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/cipher_E.mk
+    $(LOCAL_DIR)/awaken_E.mk
 
 COMMON_LUNCH_CHOICES := \
-    cipher_E-userdebug \
-    cipher_E-user \
-    cipher_E-eng
+    awaken_E-userdebug \
+    awaken_E-user \
+    awaken_E-eng

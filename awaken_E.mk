@@ -22,13 +22,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk
 # Inherit from E device
 $(call inherit-product, device/10or/E/device.mk)
 
-# Inherit some common CipherOS stuff.
-$(call inherit-product, vendor/cipher/config/common_full_phone.mk)
+# Inherit some common AwakenOS stuff.
+$(call inherit-product, vendor/awaken/config/common_full_phone.mk)
 
 PRODUCT_DEVICE := E
 PRODUCT_BRAND := 10or
 PRODUCT_MODEL := Tenor E
-PRODUCT_NAME := cipher_E
+PRODUCT_NAME := awaken_E
 BOARD_VENDOR := 10or
 PRODUCT_MANUFACTURER := 10or
 
@@ -40,11 +40,9 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service
 
 # Target
-CIPHER_MAINTAINER := popoASM
 TARGET_SUPPORTS_QUICK_TAP := true
-USE_PIXEL_CHARGER_IMAGES := true
+TARGET_GAPPS_ARCH := arm64
 TARGET_FACE_UNLOCK_SUPPORTED := true
-TARGET_SUPPORTS_BLUR := false
 PRODUCT_GMS_CLIENTID_BASE := android-huaqin
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
