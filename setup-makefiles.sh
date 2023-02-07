@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE=G
+DEVICE=E
 VENDOR=10or
 
 # Load extract_utils and do some sanity checks

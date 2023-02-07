@@ -1,8 +1,8 @@
 cc_binary {
-    name: "android.hardware.lights-service.G",
+    name: "android.hardware.lights-service.E",
     relative_install_path: "hw",
-    init_rc: ["lights-G.rc"],
-    vintf_fragments: ["lights-G.xml"],
+    init_rc: ["lights-E.rc"],
+    vintf_fragments: ["lights-E.xml"],
     vendor: true,
     shared_libs: [
         "libbase",

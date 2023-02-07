@@ -1,1 +1,1 @@
-require board=G
+require board=E

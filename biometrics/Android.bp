@@ -1,5 +1,5 @@
 cc_defaults {
-    name: "fingerprint_service_G_defaults",
+    name: "fingerprint_service_E_defaults",
     defaults: ["hidl_defaults"],
     relative_install_path: "hw",
     srcs: [
@@ -19,8 +19,8 @@ cc_defaults {
 }
 
 cc_binary {
-    name: "android.hardware.biometrics.fingerprint@2.1-service.G",
-    defaults: ["fingerprint_service_G_defaults"],
-    init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.G.rc"],
-    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.1-service.G.xml"],
+    name: "android.hardware.biometrics.fingerprint@2.1-service.E",
+    defaults: ["fingerprint_service_E_defaults"],
+    init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.E.rc"],
+    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.1-service.E.xml"],
 }
