@@ -1,8 +1,8 @@
 #
-# Copyright (C) 2022 The ArrowOS Project
+# Copyright (C) 2022 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/arrow_E.mk
+    $(LOCAL_DIR)/lineage_E.mk

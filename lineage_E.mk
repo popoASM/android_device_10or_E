@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021-2023 The ArrowOS Project
+# Copyright (C) 2021-2023 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -12,17 +12,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk
 # Inherit from E device
 $(call inherit-product, device/10or/E/device.mk)
 
-# Inherit some common ArrowOS stuff
-$(call inherit-product, vendor/arrow/config/common.mk)
+# Inherit some common LineageOS stuff
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Boot Animation
-TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_BOOT_ANIMATION_RES := 720
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_BRAND := 10.or
 PRODUCT_DEVICE := E
 PRODUCT_MANUFACTURER := 10.or
-PRODUCT_NAME := arrow_E
+PRODUCT_NAME := lineage_E
 PRODUCT_MODEL := 10.or E
 
 PRODUCT_GMS_CLIENTID_BASE := android-huaqin
